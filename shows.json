@@ -1,0 +1,127 @@
+{
+    "the simpsons": {
+        "id": 6122,
+        "name": "The Simpsons",
+        "localdir": "The Simpsons",
+        "json_file": "shows/the_simpsons.json"
+    },
+
+    "the flash": {
+        "id": 35624,
+        "name": "The Flash",
+        "localdir": "The Flash",
+        "json_file": "shows/the_flash.json"
+    },
+
+    "game of thrones": {
+        "id": 23455,
+        "name": "Game of Thrones",
+        "localdir": "Game of Thrones",
+        "json_file": "shows/game_of_thrones.json"
+    },
+
+    "the flash": {
+        "id": 35624,
+        "name": "The Flash",
+        "localdir": "The Flash",
+        "json_file": "shows/the_flash.json"
+    },
+
+    "supergirl": {
+        "id": 43234,
+        "name": "Supergirl",
+        "localdir": "Supergirl",
+        "json_file": "shows/supergirl.json"
+    },
+
+    "dcs legends of tomorrow": {
+        "id": 46692,
+        "name": "DC's Legends of Tomorrow",
+        "localdir": "Legends of Tomorrow",
+        "json_file": "shows/dcs_legends_of_tomorrow.json"
+    },
+
+    "the big bang theory": {
+        "id": 8362,
+        "name": "The Big Bang Theory",
+        "localdir": "The Big Bang Theory",
+        "json_file": "shows/the_big_bang_theory.json"
+    },
+
+    "supernatural": {
+        "id": 5348,
+        "name": "Supernatural",
+        "localdir": "Supernatural",
+        "json_file": "shows/supernatural.json"
+    },
+
+    "marvels agents of shield": {
+        "id": 31452,
+        "name": "Marvel's Agents of S.H.I.E.L.D.",
+        "localdir": "Marvels Agents of SHIELD",
+        "json_file": "shows/marvels_agents_of_shield.json"
+    },
+
+    "vikings": {
+        "id": 29977,
+        "name": "Vikings",
+        "localdir": "Vikings",
+        "json_file": "shows/vikings.json"
+    },
+
+    "westworld": {
+        "id": 36210,
+        "name": "Westworld",
+        "localdir": "Westworld",
+        "json_file": "shows/westworld.json"
+    },
+
+    "rick and morty": {
+        "id": 32157,
+        "name": "Rick and Morty",
+        "localdir": "Rick and Morty",
+        "json_file": "shows/rick_and_morty.json"
+    },
+
+    "doctor who": {
+        "id": 3284,
+        "name": "Doctor Who",
+        "localdir": "Doctor Who",
+        "json_file": "shows/doctor_who.json"
+    },
+
+    "young sheldon": {
+        "id": 56967,
+        "name": "Young Sheldon",
+        "localdir": "Young Sheldon",
+        "json_file": "shows/young_sheldon.json"
+    },
+
+    "south park": {
+        "id": 5205,
+        "name": "South Park",
+        "localdir": "South Park",
+        "json_file": "shows/south_park.json"
+    },
+
+    "silicon valley": {
+        "id": 32529,
+        "name": "Silicon Valley",
+        "localdir": "Silicon Valley",
+        "json_file": "shows/silicon_valley.json"
+    },
+
+    "family guy": {
+        "id": 3455,
+        "name": "Family Guy",
+        "localdir": "Family Guy",
+        "json_file": "shows/family_guy.json"
+    },
+
+    "star trek discovery": {
+        "id": 51543,
+        "name": "Star Trek: Discovery",
+        "localdir": "Star Trek Discovery",
+        "json_file": "shows/star_trek_discovery.json"
+    }
+}
