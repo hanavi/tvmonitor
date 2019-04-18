@@ -51,7 +51,6 @@ def save_data(fname, show_data):
 def get_last_episode(show_dir, show_file):
     """Print out the last episode information for a given show."""
 
-
     show_data = load_data(show_file)
 
     episodes = show_data['tvShow']['episodes']
@@ -138,7 +137,6 @@ def main(dbg):
 
     if dbg is True:
         logging.basicConfig(level=logging.DEBUG)
-
     else:
         logging.basicConfig(level=logging.WARNING)
 
