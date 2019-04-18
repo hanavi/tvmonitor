@@ -2,25 +2,37 @@
 # coding: utf-8
 
 import requests
-from bs4 import BeautifulSoup as bs
-import re
-import pprint
 import json
 from datetime import datetime
 from localshows import check_local
+import structlog
+from structlog.stdlib import LoggerFactory
+import logging
+import click
+
+structlog.configure(logger_factory=LoggerFactory())
+log = structlog.get_logger()
+
+debug = log.debug
+info = log.info
+warn = log.warn
 
 
-def download_data(showid):
+def download_data(show_id):
+    """Download show information from website."""
 
     base_url = "https://www.episodate.com/api"
-    cmd = base_url + f"/show-details?q={showid}"
+    cmd = base_url + f"/show-details?q={show_id}"
 
     req = requests.get(cmd)
     if req.status_code == 200:
         return req.json()
 
+    return {}
+
 
 def load_data(fname):
+    """Load local show info from file."""
 
     with open(fname) as fd:
         show_data = fd.read()
@@ -30,12 +42,15 @@ def load_data(fname):
 
 
 def save_data(fname, show_data):
+    """Save show information."""
 
     with open(fname, 'w') as fd:
         fd.write(json.dumps(show_data))
 
 
 def get_last_episode(show_dir, show_file):
+    """Print out the last episode information for a given show."""
+
 
     show_data = load_data(show_file)
 
@@ -78,6 +93,7 @@ def get_last_episode(show_dir, show_file):
 
 
 def update_shows():
+    """Update the information for all of the shows."""
 
     fname = 'shows.json'
     with open(fname) as fd:
@@ -94,6 +110,7 @@ def update_shows():
 
 
 def check_shows():
+    """Check all of our shows for recent episodes."""
 
     fname = 'shows.json'
     with open(fname) as fd:
@@ -102,7 +119,6 @@ def check_shows():
 
     for show, local_info in show_info.items():
 
-        show_id = local_info['id']
         show_dir = local_info['localdir']
         show_file = local_info['json_file']
         show_name = local_info['name']
@@ -114,7 +130,18 @@ def check_shows():
         print("-"*79)
         print()
 
-def main():
+
+@click.command()
+@click.option("-d", "--debug", "dbg", is_flag=True, default=False,
+              help="Show debugging info")
+def main(dbg):
+
+    if dbg is True:
+        logging.basicConfig(level=logging.DEBUG)
+
+    else:
+        logging.basicConfig(level=logging.WARNING)
+
     check_shows()
 
     # update_shows()
@@ -122,4 +149,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
