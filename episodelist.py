@@ -133,16 +133,19 @@ def check_shows():
 @click.command()
 @click.option("-d", "--debug", "dbg", is_flag=True, default=False,
               help="Show debugging info")
-def main(dbg):
+@click.option("-u", "--update", is_flag=True, default=False,
+              help="Update Shows")
+def main(dbg, update):
 
     if dbg is True:
         logging.basicConfig(level=logging.DEBUG)
     else:
         logging.basicConfig(level=logging.WARNING)
 
-    check_shows()
-
-    # update_shows()
+    if update is True:
+        update_shows()
+    else:
+        check_shows()
 
 
 if __name__ == "__main__":

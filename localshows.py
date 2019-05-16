@@ -26,7 +26,7 @@ def get_shows(show_dir):
         return []
 
     shows = []
-    episode_fmt = re.compile(".*([sS][0-9]+[eE][0-9]+).*")
+    episode_fmt = re.compile(".*([sS][0-9]+[eE][0-9]+).*", flags=re.IGNORECASE)
 
     for fname in path.glob("**/*"):
         matches = episode_fmt.match(str(fname))
