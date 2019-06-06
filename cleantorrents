@@ -71,6 +71,8 @@ def find_matches(search):
 def check_torrent_status():
     cmd = ["ssh", "deluge", "deluge-console", "info"]
     output = run(cmd, capture_output=True).stdout.decode()
+    if len(output) == 0:
+        return
     output = output.split("\n \n")
     torrent_id_list = []
     for torrent in output:
@@ -88,17 +90,15 @@ def check_torrent_status():
         torrent_id_list.append(torrent_id)
 
     cmd = ["ssh", "deluge", "deluge-console", "rm"] + torrent_id_list
-    # debug(cmd)
     run(cmd)
-    sys.exit()
 
 def main():
 
-    # data = load_searches('/home/james/Dropbox/scripts/tvmonitor/searches.json')
-    # for d in data:
-    #     find_matches(d)
     print("Devel Mode")
     check_torrent_status()
+    data = load_searches('/home/james/Dropbox/scripts/tvmonitor/searches.json')
+    for d in data:
+        find_matches(d)
 
 
 if __name__ == "__main__":
